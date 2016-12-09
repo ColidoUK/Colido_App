@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_diy">DIY</string>
+    <string name="title_activity_choose_printer">Choose Printer</string>
+    <string name="diy_button_description">DIY</string>
+    <string name="compact_button_description">Compact</string>
+    <string name="two_plus_button_description">2 Plus</string>
+    <string name="m2020_button_description">M2020</string>
+    <string name="x3045_button_description">X3045</string>
 </resources>

@@ -13,61 +13,14 @@
     tools:context="com.example.shelleyd.myapplication.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <ImageButton
-        android:layout_width="125dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/my_layout_margin"
-        android:src="@drawable/diy"
-        android:scaleType="fitXY"
-        android:adjustViewBounds="true"
-        android:padding="0dp"
-        android:id="@+id/diyImage" />
 
-    <ImageButton
-        android:layout_width="@dimen/my_layout_width"
+    <TextView
+        android:text=""
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/my_layout_margin"
-        android:src="@drawable/compactfront"
-        android:scaleType="fitXY"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:adjustViewBounds="true"
-        android:padding="0dp"
-        android:id="@+id/compactImage" />
-
-    <ImageButton
-        android:layout_width="@dimen/my_layout_width"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/my_layout_margin"
-        android:src="@drawable/front2plus"
-        android:scaleType="fitXY"
-        android:layout_below="@id/diyImage"
-        android:adjustViewBounds="true"
-        android:padding="0dp"
-        android:id="@+id/twoplusImage" />
-
-    <ImageButton
-        android:layout_width="@dimen/my_layout_width"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/my_layout_margin"
-        android:src="@drawable/m2020"
-        android:scaleType="fitXY"
-        android:layout_below="@id/diyImage"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:adjustViewBounds="true"
-        android:padding="0dp"
-        android:id="@+id/m2020Image" />
-
-    <ImageButton
-        android:layout_width="@dimen/my_layout_width"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/my_layout_margin2"
-        android:src="@drawable/x3045"
-        android:scaleType="fitXY"
-        android:layout_below="@id/twoplusImage"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:adjustViewBounds="true"
-        android:padding="0dp"
-        android:id="@+id/x3045Image" />
+        android:id="@+id/textView"
+        tools:textSize="52sp"
+        android:textStyle="bold" />
 </RelativeLayout>
