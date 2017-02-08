@@ -39,11 +39,27 @@ public class ChoosePrinter extends AppCompatActivity {
     View.OnClickListener printerOnClick = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            ImageButton ib = (ImageButton)view;
-            String ibText = ib.getContentDescription().toString();
+            Integer printer = null;
 
+            switch (view.getId()) {
+                case R.id.diyImage:
+                    printer = 1;
+                    break;
+                case R.id.compactImage:
+                    printer = 2;
+                    break;
+                case R.id.twoplusImage:
+                    printer = 3;
+                    break;
+                case R.id.m2020Image:
+                    printer = 4;
+                    break;
+                case R.id.x3045Image:
+                    printer = 5;
+                    break;
+            }
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-            intent.putExtra("PRINTER_NAME", ibText);
+            intent.putExtra("PRINTER", printer);
             startActivity(intent);
         }
     };

@@ -10,5 +10,7 @@
         android:layout_margin="0dp"
         android:src="@drawable/diy"
         android:layout_weight="1"
+        android:adjustViewBounds="true"
+        android:contentDescription="Images for list"
         android:id="@+id/listImage"/>
 </LinearLayout>

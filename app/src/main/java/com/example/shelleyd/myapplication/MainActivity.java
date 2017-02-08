@@ -1,6 +1,7 @@
 package com.example.shelleyd.myapplication;
 
         import android.content.Context;
+        import android.content.Intent;
         import android.media.Image;
         import android.os.Bundle;
         import android.support.annotation.NonNull;
@@ -13,7 +14,10 @@ package com.example.shelleyd.myapplication;
         import android.view.LayoutInflater;
         import android.view.View;
         import android.view.ViewGroup;
+        import android.widget.AdapterView;
         import android.widget.ArrayAdapter;
+        import android.widget.Button;
+        import android.widget.ImageButton;
         import android.widget.ImageView;
         import android.widget.ListView;
         import android.widget.ScrollView;
@@ -21,8 +25,8 @@ package com.example.shelleyd.myapplication;
 
 public class MainActivity extends AppCompatActivity {
 
-    int[]images={R.drawable.high_res_image,/*R.drawable.compactfront,R.drawable.front2plus,R.drawable.m2020,R.drawable.x3045*/ R.drawable.high_res_image, R.drawable.high_res_image};
-
+    int[]images={R.drawable.user_manual,R.drawable.tips_tricks, R.drawable.troubleshooting};
+    Integer printer;
     ListView myListView;
 
     @Override
@@ -36,6 +40,26 @@ public class MainActivity extends AppCompatActivity {
         MyAdapter adapter = new MyAdapter (MainActivity.this, images);
         myListView.setAdapter(adapter);
 
+        if (savedInstanceState == null) {
+            Bundle bundle = getIntent().getExtras();
+            if(bundle == null) {
+                printer = null;
+            }
+            else {
+                printer = bundle.getInt("PRINTER");
+            }
+        }
+        else {
+            printer = (Integer) savedInstanceState.getSerializable("PRINTER");
+        }
+
+        myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getApplicationContext(), ShowManual.class);
+                startActivity(intent);
+            }
+        });
     }
 
     class MyAdapter extends ArrayAdapter<String> {
