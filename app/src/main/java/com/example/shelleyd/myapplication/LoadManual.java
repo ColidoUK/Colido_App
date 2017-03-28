@@ -34,7 +34,7 @@ public class LoadManual extends AppCompatActivity {
 
         InputStream in = null;
         OutputStream out = null;
-        File file = new File (getFilesDir(), "2Plus_Manual.pdf");
+        File file = new File (getExternalFilesDir(null), "2Plus_Manual.pdf");
 
         try
         {

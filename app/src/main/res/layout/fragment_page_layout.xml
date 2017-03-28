@@ -1,16 +1,22 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.shelleyd.myapplication.PageFragment">
 
+        <VideoView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="top"
+            android:layout_weight="1"
+            android:id="@+id/manualVideo" />
 
-    <TextView
-        android:text="TextView"
-        android:textSize="40dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/textView" />
-</RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1.5"
+            android:id="@+id/manualText"/>
+
+
+</LinearLayout>

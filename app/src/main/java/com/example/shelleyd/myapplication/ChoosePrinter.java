@@ -58,7 +58,7 @@ public class ChoosePrinter extends AppCompatActivity {
                     printer = 5;
                     break;
             }
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            Intent intent = new Intent(getApplicationContext(), ShowManual.class);
             intent.putExtra("PRINTER", printer);
             startActivity(intent);
         }

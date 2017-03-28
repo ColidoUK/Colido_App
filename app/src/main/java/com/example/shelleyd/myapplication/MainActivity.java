@@ -3,6 +3,7 @@ package com.example.shelleyd.myapplication;
         import android.content.Context;
         import android.content.Intent;
         import android.media.Image;
+        import android.net.Uri;
         import android.os.Bundle;
         import android.support.annotation.NonNull;
         import android.support.annotation.Nullable;
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getApplicationContext(), ShowManual.class);
+                Intent intent = new Intent(getApplicationContext(), ChoosePrinter.class);
                 startActivity(intent);
             }
         });

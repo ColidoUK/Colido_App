@@ -27,7 +27,7 @@ public class PageFragment extends Fragment {
         // Inflate the layout for this fragment
 
         View view = inflater.inflate(R.layout.fragment_page_layout, container, false);
-        textView = (TextView)view.findViewById(R.id.textView);
+        textView = (TextView)view.findViewById(R.id.manualText);
         Bundle bundle = getArguments();
         String message = Integer.toString(bundle.getInt("count"));
         textView.setText("This is the" + message + " swipe view page");
