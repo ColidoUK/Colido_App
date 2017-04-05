@@ -9,6 +9,7 @@ package com.example.shelleyd.myapplication;
         import android.support.annotation.Nullable;
         import android.support.design.widget.FloatingActionButton;
         import android.support.design.widget.Snackbar;
+        import android.support.v4.widget.DrawerLayout;
         import android.support.v7.app.AppCompatActivity;
         import android.support.v7.widget.Toolbar;
         import android.util.Log;
@@ -24,11 +25,17 @@ package com.example.shelleyd.myapplication;
         import android.widget.ScrollView;
         import android.widget.TextView;
 
+        import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     int[]images={R.drawable.user_manual,R.drawable.tips_tricks, R.drawable.troubleshooting};
     Integer printer;
     ListView myListView;
+
+    String[] mDrawerTitles;
+    DrawerLayout mDrawerLayout;
+    ListView mDrawerList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,11 +44,17 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        mDrawerTitles = getResources().getStringArray(R.array.drawer_array);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerList = (ListView) findViewById(R.id.left_drawer);
+
         myListView = (ListView) findViewById(R.id.myList);
         MyAdapter adapter = new MyAdapter (MainActivity.this, images);
         myListView.setAdapter(adapter);
 
-        if (savedInstanceState == null) {
+        mDrawerList.setAdapter(new ArrayAdapter<String>(this, R.layout.drawer_list_item, mDrawerTitles));
+
+       /* if (savedInstanceState == null) {
             Bundle bundle = getIntent().getExtras();
             if(bundle == null) {
                 printer = null;
@@ -52,13 +65,22 @@ public class MainActivity extends AppCompatActivity {
         }
         else {
             printer = (Integer) savedInstanceState.getSerializable("PRINTER");
-        }
+        }*/
 
         myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getApplicationContext(), ChoosePrinter.class);
-                startActivity(intent);
+                Intent intent;
+                switch (position) {
+                    case 0:
+                        intent = new Intent(getApplicationContext(), ChoosePrinter.class);
+                        startActivity(intent);
+                        break;
+                    case 1:
+                        intent = new Intent(getApplicationContext(), TipsTricks.class);
+                        startActivity(intent);
+                        break;
+                }
             }
         });
     }
@@ -108,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
 
             return convertView;
         }
+
     }
 
 }
