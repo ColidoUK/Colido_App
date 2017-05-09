@@ -1,6 +1,7 @@
 package com.example.shelleyd.myapplication;
 
 import android.app.Activity;
+import android.content.Context;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -22,7 +23,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class TipsTricks extends AppCompatActivity {
+public class TipsTricks extends NavigationDrawer {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -42,10 +43,13 @@ public class TipsTricks extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tips_tricks);
+        //setContentView(R.layout.activity_tips_tricks);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View contentView = inflater.inflate(R.layout.activity_tips_tricks, null, false);
+        mDrawerLayout.addView(contentView, 0);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());

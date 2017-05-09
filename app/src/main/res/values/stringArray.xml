@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="drawer_array">
+        <item>Home</item>
         <item>User Manual</item>
         <item>Tips and Tricks</item>
         <item>Troubleshooting</item>

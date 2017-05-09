@@ -10,9 +10,59 @@
     <string name="x3045_button_description">X3045</string>
     <string name="title_activity_load_manual">LoadManual</string>
     <string name="title_activity_show_manual">ShowManual</string>
+    <string name="drawer_open">Open Navigation Drawer</string>
+    <string name="drawer_close">Close Navigation Drawer</string>
+    
+    <string name="bed_calibration">1.\tClick the Z home button to raise the bed into the printing position.\n\n2.\tOnce the bed has been raised, position
+    the printer head over the back right wing nut.\n\n3.\tUse the test sheet that came with the printer and place it between the nozzle and the
+    platform.\n\n4.\tTurn the wing nut until the nozzle is just touching the test sheet. The test sheet should just be able to slide out.\n\n
+        5.\tMove the print head over to the back left wing nut and then the front wing nut and repeat steps 3 and 4.</string>
+
+    <string name="clogged_nozzle">Heat the extruder up to 240c and push through some filament, this may un-clog the nozzle.\n\nWhile the extruder is at temperature for the filament which you are using, take a length of filament and load it into
+    the extruder.\n\nPush the filament through the extruder so that it starts coming out of the nozzle (it might not if you have a full clog)\n\n
+    Cool the nozzle down to around 100c and keep pushing the filment through until no more will come out of the nozzle.\n\n Once the nozzle has cooled to this
+    temperature try to pull the filament out of the extruder. If the filament doesn not pull out without snapping, heat the extruder up to printing temperature
+    and keep pulling the filament until it pops out of the extruder.\n\nYou should see some black bits and dirt on the end of the filament. Cut off the end
+    and repeat until the filament is clean.</string>
+
+    <string name="print_head_removal">1.\tUse the supplied allen key to remove the 2 screws at the front of the fan. Be careful when removing them
+    not to loose any of the parts.\n\n2.\tUse the long, thin allen key to unscrew the small black grub screw facing the front of the printer. Try not to remove the
+    grub screw completely to avoid losing it.\n\n3.\tTo remove the whole print head from the carriage unscrew the screws underneath the carriage using the
+    supplied allen key.</string>
+
+    <string name="recommended_temps"> PLA nozzle 190-210c\tPLA bed: 60-70c\n\nABS nozzle:240c\tABS bed: 110c\n\nPA(Nylon) nozzle: 240-260c
+    \tPA(Nylon) bed: 80-100c\n\nPC+ nozzle: 240-260c\tPC+bed: 110-120c</string>
+
+    <string name="inserting_filament"> 1.\t Remove the filament spool from its packaging. Keep hold of the silica get as it can be useful for filament
+    storage.\n\n2.\t Mount the filament spool onto the spool holder so that the filament rotates in a counter clockwise direction.\n\n3.\t
+     Gently pull the filament from the spool. Cut the filament flat for easy installation.\n\n4.\t Insert the filament into the tube until it comes
+    out of the other end of the tube.\n\n5.\t Push down on the printer head arm and insert the filament into the hole at the top of the printer head.
+    Push the filament until it reaches the end of the nozzle, then release the printer head arm.\n\nPlease note: when changing filament from a hotter melting
+    point to a lower one, use the hotter melting point to flush out the old filament.</string>
+
+    <string name="load_file"> To print a custom file, you will need a 3D design in either .stl or .obj file format. You can download these files
+    from websites such as www.MyMiniFactory.com or design your own using CAD or other 3D design software.\n\nTo load the file into Repetier Host click the
+    load button located in the top left. Navigate through your files to find the correct .stl or .obj file and click open to load the file.\n\nMultiple
+    files can be loaded onto the build plate at once.</string>
+
+    <string name="slice_file"> For you .stl or .obj file to be ready for 3D printing it needs to be "sliced" first. Slicing converts the design file into individual
+    layers and each layer has a set of commands to tell the 3D printer what to do.\n\nTo slice a file, first make sure that you have the correct
+    settings for the printer you are using. These settings can vary depending on the printer model, quality and printing temperatures.\n\nOnce you
+    have checked the slicing settings click the slice button and a progress bar will appear.\n\nWhen the slicing has finished you can either print the
+    file on a connected printer or save the newly created gcode file so it can be printing using an SD card or saved for later.\n\nPlease note: If you are
+    using a printer without a heated bed use only Slic3r and not CuraEngine.</string>
+
+    <string name="object_controls"> Export: If you have loaded multiple files into the software you can use this button tp export them out as one file.
+    \n\nAdd Object: This has the same function as the load button.\n\nCopy Object(s): If you wish to copy an object without loading it in multiple times you
+    can click this button and select the number of copies.\n\nAuto-Position: This will automatically position the selected object in the centre of the
+    build plate.\n\nCentre Object Centres the selected object relative to the size of the bed.\n\nScale Object: This will increase or decrease the size
+    in any or the entire xyz axis. To scale uniformly (in all axis) keep the padlock locked and enter a value into the X axis box. To scale non-uniformly
+    unlock the padlock and you will be able to enter individual values for all axis.\n\nRotate Object: A value can be entered into one of the xyz axis
+    to rotate in the chosen axis by that value, from 0-360 degrees.</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_tips_tricks">TipsTricks</string>
     <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_show_tips">ShowTips</string>
 </resources>

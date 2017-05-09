@@ -2,6 +2,7 @@ package com.example.shelleyd.myapplication;
 
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -45,7 +46,7 @@ import java.util.logging.Handler;
 import static android.R.attr.path;
 import static android.R.attr.permission;
 
-public class ShowManual extends FragmentActivity {
+public class ShowManual extends NavigationDrawer {
 
     final int MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = 0;
     Button downloadBtn;
@@ -56,21 +57,25 @@ public class ShowManual extends FragmentActivity {
     String printerName;
     Integer printer;
 
-    String[] mDrawerTitles;
+    /*String[] mDrawerTitles;
     DrawerLayout mDrawerLayout;
-    ListView mDrawerList;
+    ListView mDrawerList;*/
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_show_manual);
+        //setContentView(R.layout.activity_show_manual);
 
-        mDrawerTitles = getResources().getStringArray(R.array.drawer_array);
+        LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View contentView = inflater.inflate(R.layout.activity_show_manual, null, false);
+        mDrawerLayout.addView(contentView, 0);
+
+       /* mDrawerTitles = getResources().getStringArray(R.array.drawer_array);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
 
-        mDrawerList.setAdapter(new ArrayAdapter<String>(this, R.layout.drawer_list_item, mDrawerTitles));
+        mDrawerList.setAdapter(new ArrayAdapter<String>(this, R.layout.drawer_list_item, mDrawerTitles));*/
 
         if (savedInstanceState == null) {
             Bundle bundle = getIntent().getExtras();
