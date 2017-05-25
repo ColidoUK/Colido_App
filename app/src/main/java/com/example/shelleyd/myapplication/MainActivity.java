@@ -80,6 +80,10 @@ public class MainActivity extends NavigationDrawer {
                         intent = new Intent(getApplicationContext(), TipsTricks.class);
                         startActivity(intent);
                         break;
+                    case 2:
+                        intent = new Intent(getApplicationContext(), Troubleshooting.class);
+                        startActivity(intent);
+                        break;
                 }
             }
         });

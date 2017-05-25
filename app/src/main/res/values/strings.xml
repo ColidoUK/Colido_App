@@ -60,9 +60,64 @@
     unlock the padlock and you will be able to enter individual values for all axis.\n\nRotate Object: A value can be entered into one of the xyz axis
     to rotate in the chosen axis by that value, from 0-360 degrees.</string>
 
+    <string name="sd_print"> Some of our printers do not have an LCD screen and need to be controlled by a computer through a USB cable. However they
+    still have an SD card slot so can be used without connecting to a computer.\n\nSlice a file with the correct settings for the printer you will
+    be printing from.\n\nInstead of clicking print, click "save for SD print" and save the file onto an SD card. When naming the file, "auto0.g" must
+    be used otherwise nothing will happen when you turn on the printer.\n\nInsert the SD card into the SD card slot on the printer. Make sure the back
+    of the SD card is facing up.\n\nMake sure the printer is not connected to a computer and turn it on. The file should start to print automatically.</string>
+
+    <string name="u_extrusion"> Under extrusion occurs when there is not enough material being extruded out of the nozzle and so incomplete layers
+    appear in the printed object. Sometimes this problem is caused by the filament being used. Check that the filament is not being printed at too
+    low or too high temperatures as it may not be able to flow evenly through the nozzle if this is the case. Temperatures for each filament can be seen
+    in the recommended temperatures section of tips and tricks.\n\nIf the filament feeder makes a ticking sound then the problem is that the filament
+    is not moving through properly. The extruder gears will be grinding the filament and there may not be enough grip to move the filament through.
+    Check the spool for any tangles and reload the filament into the extruder, cutting off the end which has been grinding. If the filament is still grinding
+    then the problem may be a clogged nozzle. See the fixing a clogged nozzle section of tips and tricks.</string>
+
+    <string name="o_extrusion"> If there is too much filament being extruded then it can cause the print to look messy. Most of the time the
+    extrusion multiplier will need to be lowered. This can be changed in the filament settings of slicer configuration. Start by decreasing the
+    multiplier by 0.5 and then continue to decrease until the over extrusion has stopped.</string>
+
+    <string name="stringing"> Stringing occurs when filament oozes out from the nozzle whilst the print head is in transit. This is usually caused by
+    printing at too high temperaturesor not enough filament retraction.\n\nTo lower the temperatures go into the printer setting in Repetier-Host
+    and in the printer tab change the default extruder temperature. At first decrease the temperature by 5 degrees and then start a test print to see
+    if the stringing has been reduced. Keep changing the temperature until the best results are achieved. Do not go outside the recommended printing
+    temperature for the filament you are using.\n\n To increase the retraction the slicer settings will need to be changed. This can be done by going into
+    the slicer configuration settings from the slicer tab in Repetier-Host and finding where retraction settings are located, usually under extruder or
+    extrusion settings. From here the retraction distance and speed can be increased, amongst other settings. As with the temperature, increase the distance
+    and speed by small increments and print a test after each settings change. You should start to see less stringing but beware, if you have too much
+    retraction it can cause under extrusion after the retract as the filament will take longer to reach the end of the nozzle.\n\nAnother small change that
+    can be made is increasing the print head travel speed. Increasing this to a value around 150mm/s will give the flament less time to ooze out from
+    the nozzle before it starts printing again</string>
+
+    <string name="bed_adhesion"> If a print is not sticking to the bed at the start of a print then it can cause issues for the rest of the print job.
+    If the printer being used has a heated bed look at the recommended bed temperatures for the filament being used.\n\nThe most common cause of this
+    problem is the build plate not being calibrated correctly. Either use the built in calibration function of our range of 3D printers or refer to the bed
+    calibration section in tips and tricks. Ideally the nozzle should just be squashing the filament against the build plate rather than dropping filament
+    onto it.\n\nIf the filament is being extruded thin and wispy then the problem is with the nozzle which could be clogged. See the fixing a clogged nozzle
+    section in tips and tricks to help.</string>
+
+    <string name="warping"> Warping occurs when part of a print, usually an edge or corner, contracts while cooling and shrinks causing the part to lift
+    up from the build plate. There are many ways to prevent warping.\n\nThe build plate could be causing the part to warp. Check the temperatures
+    and calibration of the build plate. The temperatures can be found in the recommended temperatures section of tip and tricks and for calibration see
+    the calibration section or use the 3D printers built in calibration function. A thin layer of glue can also be applied to the build plate to help
+    the part adhere.\n\nSome slicer settings can also be changed to help. To access these click the configuration button in the slicer tab of Repetier-Host
+    If there is not already a brim when the model has been sliced, you can add one by setting brim width to anything other than 0mm. If brim width is
+    set to 6mm then a single layer will be printed around the object 6mm wide. A raft can also be added by increasing the raft layers. A raft adds a grid
+    between the build plate and the model causing heat to be distributed equally.A decrease in first layer speed and an increase in first layer thickness
+    can also stop filament catching the nozzle and being dragged around.</string>
+
+    <string name="overheating"> Some prints will suffer from overhanging edges not being printed properly. In most cases this can be solved by having a fan
+    face the printer whilst it is printing. This help to cool down each layer a prevents them from drooping over the previous one. Be careful not to set
+    the fan too powerful as this could cause the print to move on the build plate.\n\nIf the fan does not solve the problem then supports may need to
+    be printed under the overhangs. Supports can be set in the configuration settings of the slicer and can be changed to cover more or less of the model by
+    changing the overhang threshold.</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_tips_tricks">TipsTricks</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="title_activity_show_tips">ShowTips</string>
+    <string name="title_activity_troubleshooting">Troubleshooting</string>
+    <string name="title_activity_show_troubleshooting">ShowTroubleshooting</string>
 </resources>

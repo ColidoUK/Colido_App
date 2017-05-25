@@ -73,7 +73,8 @@ public class NavigationDrawer extends AppCompatActivity {
                         startActivity(intent);
                         break;
                     case 3:
-                        Toast.makeText(NavigationDrawer.this, "You selected Troubleshooting!", Toast.LENGTH_SHORT).show();
+                        intent = new Intent(getApplicationContext(), Troubleshooting.class);
+                        startActivity(intent);
                         break;
                 }
             }

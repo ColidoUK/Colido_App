@@ -30,6 +30,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -49,8 +50,8 @@ import static android.R.attr.permission;
 public class ShowManual extends NavigationDrawer {
 
     final int MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = 0;
-    Button downloadBtn;
-    Button viewBtn;
+    ImageButton downloadBtn;
+    ImageButton viewBtn;
     String filePath;
     String fileName;
     String MY_URL;
@@ -95,11 +96,11 @@ public class ShowManual extends NavigationDrawer {
         //MY_URL = "https://www.colido.com/download/user_manual/CoLiDo_2.0_Plus_User_Manual_v1.2.pdf";
         //fileName = "manual.pdf";
         filePath = "/Android/data/com.example.shelleyd.myapplication/files/";
-        downloadBtn = (Button) findViewById(R.id.downloadBtn);
-        viewBtn = (Button) findViewById(R.id.viewBtn);
+        downloadBtn = (ImageButton) findViewById(R.id.downloadBtn);
+        viewBtn = (ImageButton) findViewById(R.id.viewBtn);
 
-        downloadBtn.setText("Download " + printerName + " Manual");
-        viewBtn.setText("View " + printerName + " Manual");
+        //downloadBtn.setText("Download " + printerName + " Manual");
+        //viewBtn.setText("View " + printerName + " Manual");
 
         //asks user if they wish to allow writing to external storage
         if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {

@@ -25,7 +25,7 @@ public class PrintingFragment extends Fragment {
     }
 
     ListView lv;
-    String[] tipsArray = {"Recommended Temperatures"};
+    String[] tipsArray = {"Recommended Temperatures", "Using an SD card Without an LCD Screen"};
     Integer selection = null;
 
     @Override
@@ -43,6 +43,9 @@ public class PrintingFragment extends Fragment {
                 switch (i) {
                     case 0: //recommended filament temperatures
                         selection = 40;
+                        break;
+                    case 1: //printing from an SD card withou an LCD screen
+                        selection = 41;
                         break;
                 }
                 Intent intent = new Intent (getContext(), ShowTips.class);

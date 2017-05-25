@@ -67,6 +67,10 @@ public class ShowTips extends NavigationDrawer {
                 break;
             case 40:
                 tipText.setText(R.string.recommended_temps);
+                break;
+            case 41:
+                tipText.setText(R.string.sd_print);
+                break;
         }
 
         //selectTip();

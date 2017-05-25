@@ -31,6 +31,7 @@
         <activity
             android:name=".ShowManual"
             android:label="@string/title_activity_show_manual"
+            android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <provider
@@ -50,7 +51,27 @@
         <activity
             android:name=".ShowTips"
             android:label="@string/title_activity_show_tips"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Troubleshooting"
+            android:label="@string/title_activity_troubleshooting"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.shelleyd.myapplication.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ShowTroubleshooting"
+            android:label="@string/title_activity_show_troubleshooting"
+            android:parentActivityName=".Troubleshooting"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.shelleyd.myapplication.Troubleshooting" />
+        </activity>
     </application>
 
 </manifest>
