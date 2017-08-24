@@ -1,6 +1,9 @@
 package com.example.shelleyd.myapplication;
 
 import android.app.Activity;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
@@ -10,6 +13,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Looper;
+import android.os.SystemClock;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
@@ -18,6 +22,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.ListFragment;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
 import android.support.v4.view.ViewPager;
@@ -57,10 +62,12 @@ public class ShowManual extends NavigationDrawer {
     String MY_URL;
     String printerName;
     Integer printer;
-
+    NotificationManager notificationManager;
+    NotificationCompat.Builder builder;
     /*String[] mDrawerTitles;
     DrawerLayout mDrawerLayout;
     ListView mDrawerList;*/
+
 
 
     @Override
@@ -93,6 +100,7 @@ public class ShowManual extends NavigationDrawer {
 
         getPrinter(savedInstanceState);
 
+        Toast.makeText(getApplicationContext(), printerName, Toast.LENGTH_SHORT).show();
         //MY_URL = "https://www.colido.com/download/user_manual/CoLiDo_2.0_Plus_User_Manual_v1.2.pdf";
         //fileName = "manual.pdf";
         filePath = "/Android/data/com.example.shelleyd.myapplication/files/";
@@ -111,6 +119,11 @@ public class ShowManual extends NavigationDrawer {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(), "Manual Downloading", Toast.LENGTH_SHORT).show();
+                notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+                builder = new NotificationCompat.Builder(ShowManual.this);
+                builder.setContentTitle(printerName + " User Manual")
+                        .setContentText("Download in progress")
+                        .setSmallIcon(R.drawable.ic_download_black);
                 new AccessPDF().execute();
             }
         });
@@ -163,9 +176,9 @@ public class ShowManual extends NavigationDrawer {
                 printerName = "Compact";
                 break;
             case 3:
-                MY_URL = "https://www.colido.com/download/user_manual/CoLiDo_2.0_Plus_User_Manual_v1.2.pdf";
-                fileName = "2_plus_manual.pdf";
-                printerName = "2.0 Plus";
+                MY_URL = "http://cloud.prmhk.com:5000/fbsharing/fm9exXCI";
+                fileName = "3_manual.pdf";
+                printerName = "3";
                 break;
             case 4:
                 MY_URL = "https://www.colido.com/download/user_manual/CoLiDo_M2020_User_Manual_v1.1.pdf";
@@ -177,14 +190,39 @@ public class ShowManual extends NavigationDrawer {
                 fileName = "x3045_manual.pdf";
                 printerName = "X3045";
                 break;
+            case 6:
+                MY_URL = "http://cloud.prmhk.com:5000/fbsharing/d2xHPogG";
+                fileName = "d1315_manual.pdf";
+                printerName = "D1315";
+                break;
         }
     }
 
-    private class AccessPDF extends AsyncTask {
+    private class AccessPDF extends AsyncTask<Object, Integer, Object> {
+
+        int id = 10;
+        int incr = 0;
+        int length = 100;
+
+       protected void onPreExecute() {
+            super.onPreExecute();
+
+            builder.setProgress(100, 0, true);
+            notificationManager.notify(id, builder.build());
+        }
+
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+
+            builder.setProgress(100, values[0], true);
+            notificationManager.notify(id, builder.build());
+            super.onProgressUpdate(values);
+        }
 
         @Override
         protected Object doInBackground(Object[] objects) {
 
+            int sentData = 0;
             try {
                 URL url = new URL(MY_URL);
                 HttpURLConnection c = (HttpURLConnection) url.openConnection();
@@ -200,20 +238,39 @@ public class ShowManual extends NavigationDrawer {
                 File outputFile = new File(file, fileName);
                 FileOutputStream fos = new FileOutputStream(outputFile);
                 InputStream is = c.getInputStream();
+                length = is.available();
                 byte[] buffer = new byte[1024];
                 int len1 = 0;
                 while ((len1 = is.read(buffer)) != -1) {
                     fos.write(buffer, 0, len1);
+                    sentData += len1;
+                    incr++;
+                    //int progress = (int) ((sentData / (float) length) * 100);
+                    //publishProgress(incr);
                 }
                 fos.flush();
                 fos.close();
                 is.close();
+                /*builder.setContentText("Download complete");
+                builder.setProgress(0, 0, false);
+                notificationManager.notify(id, builder.build());*/
 
             } catch (IOException e) {
                 Log.e("Joe", "Error: " + e);
             }
 
             return null;
+        }
+
+
+
+        @Override
+        protected void onPostExecute(Object o) {
+            super.onPostExecute(o);
+            Toast.makeText(getApplicationContext(), "Download Complete", Toast.LENGTH_SHORT).show();
+            builder.setContentText("Download complete");
+            builder.setProgress(0, 0, false);
+            notificationManager.notify(id, builder.build());
         }
     }
 

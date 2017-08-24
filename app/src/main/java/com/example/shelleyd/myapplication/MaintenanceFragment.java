@@ -28,7 +28,7 @@ public class MaintenanceFragment extends Fragment{
     }
 
     ListView lv;
-    String[] tipsArray = {"Bed Calibration", "Fixing a clogged nozzle", "Taking apart the print head" };
+    String[] tipsArray = {"Bed calibration for CoLiDo Compact", "Fixing a clogged nozzle", "Taking apart the print head" };
     Integer selection = null;
 
     @Override

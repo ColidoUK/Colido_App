@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <GridView
+        android:id="@+id/gridview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:verticalSpacing="0dp"
+        android:horizontalSpacing="0dp"
+        android:stretchMode="columnWidth"
+        android:numColumns="2"/>
+
+</FrameLayout>
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/content_choose_printer"
@@ -12,39 +27,28 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.shelleyd.myapplication.MainActivity"
     tools:showIn="@layout/activity_choose_printer"
-    tools:background="@android:color/darker_gray">
-
-    <ImageButton
-        android:layout_width="125dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/my_layout_margin"
-        android:src="@drawable/diy"
-        android:scaleType="fitXY"
-        android:adjustViewBounds="true"
-        android:padding="0dp"
-        android:id="@+id/diyImage"
-        android:contentDescription="@string/diy_button_description" />
+    >
 
     <ImageButton
         android:layout_width="@dimen/my_layout_width"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/my_layout_margin"
-        android:src="@drawable/compactfront"
-        android:scaleType="fitXY"
+        android:src="@drawable/compact"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:adjustViewBounds="true"
         android:padding="0dp"
         android:id="@+id/compactImage"
-        android:contentDescription="@string/compact_button_description" />
+        android:contentDescription="@string/compact_button_description"
+        android:scaleType="fitXY" />
 
     <ImageButton
         android:layout_width="@dimen/my_layout_width"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/my_layout_margin"
-        android:src="@drawable/front2plus"
+        android:src="@drawable/three"
         android:scaleType="fitXY"
-        android:layout_below="@id/diyImage"
+        android:layout_below="@id/compactImage"
         android:adjustViewBounds="true"
         android:padding="0dp"
         android:id="@+id/twoplusImage"
@@ -54,9 +58,9 @@
         android:layout_width="@dimen/my_layout_width"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/my_layout_margin"
-        android:src="@drawable/m2020"
+        android:src="@drawable/m2020_logo"
         android:scaleType="fitXY"
-        android:layout_below="@id/diyImage"
+        android:layout_below="@id/compactImage"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:adjustViewBounds="true"
@@ -65,15 +69,43 @@
         android:contentDescription="@string/m2020_button_description" />
 
     <ImageButton
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/diy_logo"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        android:padding="0dp"
+        android:id="@+id/diyImage"
+        android:contentDescription="@string/diy_button_description"
+        android:layout_alignTop="@+id/compactImage"
+        android:layout_alignLeft="@+id/twoplusImage"
+        android:layout_alignStart="@+id/twoplusImage"
+        android:elevation="0dp" />
+
+    <ImageButton
         android:layout_width="@dimen/my_layout_width"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/my_layout_margin2"
-        android:src="@drawable/x3045"
+        android:src="@drawable/x3045_logo"
         android:scaleType="fitXY"
-        android:layout_below="@id/twoplusImage"
-        android:layout_centerHorizontal="true"
         android:adjustViewBounds="true"
         android:padding="0dp"
         android:id="@+id/x3045Image"
-        android:contentDescription="@string/x3045_button_description" />
-</RelativeLayout>
+        android:contentDescription="@string/x3045_button_description"
+        android:layout_below="@+id/twoplusImage"
+        android:layout_alignLeft="@+id/twoplusImage"
+        android:layout_alignStart="@+id/twoplusImage"
+        android:layout_marginTop="12dp" />
+
+    <ImageButton
+        android:layout_width="@dimen/my_layout_width"
+        android:layout_height="wrap_content"
+        android:src="@drawable/d1315"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        android:padding="0dp"
+        android:id="@+id/d1315Image"
+        android:contentDescription="@string/m2020_button_description"
+        android:layout_alignTop="@+id/x3045Image"
+        android:layout_alignLeft="@+id/m2020Image"
+        android:layout_alignStart="@+id/m2020Image" />
+</RelativeLayout>-->
