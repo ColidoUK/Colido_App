@@ -34,7 +34,7 @@ public class PrintingFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_printing, container, false);
         lv = (ListView) rootView.findViewById(R.id.frag_printing);
 
-        ArrayAdapter adapter = new ArrayAdapter<String>(getActivity(), R.layout.tips_listview, tipsArray);
+        ArrayAdapter adapter = new ArrayAdapter<>(getActivity(), R.layout.tips_listview, tipsArray);
         lv.setAdapter(adapter);
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {

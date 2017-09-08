@@ -1,11 +1,7 @@
 package com.example.shelleyd.myapplication;
 
-import android.app.Activity;
 import android.content.Context;
 import android.support.design.widget.TabLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import android.support.v4.app.Fragment;
@@ -18,10 +14,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
 
 public class TipsTricks extends NavigationDrawer {
 
@@ -99,15 +91,6 @@ public class TipsTricks extends NavigationDrawer {
         public PlaceholderFragment() {
         }
 
-       /* ArrayAdapter adapter;
-        String[] tipsArray = {"Fixing a clogged nozzle", "Bed Calibration", "Taking apart the print head" };
-        String[] tipsArray1 = {"Loading a File", "Sorting Connection Problems", "Slicing a File" };
-        String[] tipsArray2 = {"PLA", "ABS", "TPU" };
-        static int position;*/
-        /**
-         * Returns a new instance of this fragment for the given section
-         * number.
-         */
         public static PlaceholderFragment newInstance(int sectionNumber) {
             PlaceholderFragment fragment = new PlaceholderFragment();
             //position = sectionNumber;

@@ -5,9 +5,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-/**
- * Created by Joeb on 08/02/2017.
- */
 
 public class SwipeAdapter extends FragmentStatePagerAdapter {
 

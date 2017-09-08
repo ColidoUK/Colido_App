@@ -1,10 +1,6 @@
 package com.example.shelleyd.myapplication;
 
-import android.app.Activity;
-import android.app.Notification;
 import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -12,31 +8,14 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
-import android.os.Looper;
-import android.os.SystemClock;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.app.ListFragment;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
-import android.support.v4.view.ViewPager;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import java.io.File;
@@ -44,13 +23,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.jar.Manifest;
-import java.util.logging.Handler;
-
-import static android.R.attr.path;
-import static android.R.attr.permission;
 
 public class ShowManual extends NavigationDrawer {
 
@@ -201,8 +174,6 @@ public class ShowManual extends NavigationDrawer {
     private class AccessPDF extends AsyncTask<Object, Integer, Object> {
 
         int id = 10;
-        int incr = 0;
-        int length = 100;
 
        protected void onPreExecute() {
             super.onPreExecute();
@@ -222,7 +193,6 @@ public class ShowManual extends NavigationDrawer {
         @Override
         protected Object doInBackground(Object[] objects) {
 
-            int sentData = 0;
             try {
                 URL url = new URL(MY_URL);
                 HttpURLConnection c = (HttpURLConnection) url.openConnection();
@@ -238,22 +208,14 @@ public class ShowManual extends NavigationDrawer {
                 File outputFile = new File(file, fileName);
                 FileOutputStream fos = new FileOutputStream(outputFile);
                 InputStream is = c.getInputStream();
-                length = is.available();
                 byte[] buffer = new byte[1024];
                 int len1 = 0;
                 while ((len1 = is.read(buffer)) != -1) {
                     fos.write(buffer, 0, len1);
-                    sentData += len1;
-                    incr++;
-                    //int progress = (int) ((sentData / (float) length) * 100);
-                    //publishProgress(incr);
                 }
                 fos.flush();
                 fos.close();
                 is.close();
-                /*builder.setContentText("Download complete");
-                builder.setProgress(0, 0, false);
-                notificationManager.notify(id, builder.build());*/
 
             } catch (IOException e) {
                 Log.e("Joe", "Error: " + e);

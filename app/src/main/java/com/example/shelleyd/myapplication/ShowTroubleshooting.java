@@ -1,7 +1,6 @@
 package com.example.shelleyd.myapplication;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;

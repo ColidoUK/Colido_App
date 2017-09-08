@@ -2,7 +2,6 @@ package com.example.shelleyd.myapplication;
 
 import android.annotation.TargetApi;
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,13 +11,10 @@ import android.widget.ImageView;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Joeb on 20/07/2017.
- */
 
 final class MyGridAdapter extends BaseAdapter{
 
-    private final List<Item> mItems = new ArrayList<Item>();
+    private final List<Item> mItems = new ArrayList<>();
     private final LayoutInflater mInflater;
 
     @TargetApi(16)
@@ -64,35 +60,6 @@ final class MyGridAdapter extends BaseAdapter{
         Item item = getItem(i);
 
         picture.setImageResource(item.drawableId);
-
-       /*picture.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Integer printer = null;
-
-                switch (i) {
-                    case 0:
-                        printer = 1;
-                        break;
-                    case 1:
-                        printer = 2;
-                        break;
-                    case 2:
-                        printer = 3;
-                        break;
-                    case 3:
-                        printer = 4;
-                        break;
-                    case 4:
-                        printer = 5;
-                        break;
-                }
-                Intent intent = new Intent(getApplicationContext(), ShowManual.class);
-                intent.putExtra("PRINTER", printer);
-                startActivity(intent);
-            }
-        });*/
 
         return v;
     }

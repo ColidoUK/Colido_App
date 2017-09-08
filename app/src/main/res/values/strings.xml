@@ -12,7 +12,17 @@
     <string name="title_activity_show_manual">ShowManual</string>
     <string name="drawer_open">Open Navigation Drawer</string>
     <string name="drawer_close">Close Navigation Drawer</string>
-    
+    <string name="bed_calibration_title">Bed calibration for CoLiDo Compact</string>
+    <string name="clogged_nozzle_title">Fixing a clogged nozzle</string>
+    <string name="print_head_removal_title">Taking apart the print head</string>
+    <string name="load_file_title">Loading a File</string>
+    <string name="slice_file_title">Slicing a File</string>
+    <string name="object_controls_title">Using Object Placement Controls</string>
+    <string name="filament_types_title">Different Filament Types</string>
+    <string name="instering_filament_title">Inserting Filament</string>
+    <string name="recommended_temps_title">Recommended Temperatures</string>
+    <string name="sd_print_title">Using an SD card without an LCD screen</string>
+
     <string name="bed_calibration">1.\tClick the Z home button to raise the bed into the printing position.\n\n2.\tOnce the bed has been raised, position
     the printer head over the back right wing nut.\n\n3.\tUse the test sheet that came with the printer and place it between the nozzle and the
     platform.\n\n4.\tTurn the wing nut until the nozzle is just touching the test sheet. The test sheet should just be able to slide out.\n\n
@@ -30,43 +40,50 @@
     grub screw completely to avoid losing it.\n\n3.\tTo remove the whole print head from the carriage unscrew the screws underneath the carriage using the
     supplied allen key.</string>
 
-    <string name="recommended_temps"> PLA nozzle 190-210c\tPLA bed: 60-70c\n\nABS nozzle:240c\tABS bed: 110c\n\nPA(Nylon) nozzle: 240-260c
-    \tPA(Nylon) bed: 80-100c\n\nPC+ nozzle: 240-260c\tPC+bed: 110-120c</string>
+    <string name="recommended_temps"><b>PLA nozzle:</b> 190&#8211;210c\t <b>PLA bed:</b> 60&#8211;70c\n\n<b>ABS nozzle:</b>240c\t <b>ABS bed:</b> 110c\n\n<b>PA(Nylon) nozzle:</b> 240&#8211;260c
+    \t<b>PA(Nylon) bed:</b> 80&#8211;100c\n\n<b>PC+ nozzle:</b> 240&#8211;260c\t<b>PC+ bed:</b> 110&#8211;120c</string>
 
-    <string name="inserting_filament"> 1.\t Remove the filament spool from its packaging. Keep hold of the silica get as it can be useful for filament
+    <string name="inserting_filament">1.\t Remove the filament spool from its packaging. Keep hold of the silica get as it can be useful for filament
     storage.\n\n2.\t Mount the filament spool onto the spool holder so that the filament rotates in a counter clockwise direction.\n\n3.\t
      Gently pull the filament from the spool. Cut the filament flat for easy installation.\n\n4.\t Insert the filament into the tube until it comes
     out of the other end of the tube.\n\n5.\t Push down on the printer head arm and insert the filament into the hole at the top of the printer head.
     Push the filament until it reaches the end of the nozzle, then release the printer head arm.\n\nPlease note: when changing filament from a hotter melting
     point to a lower one, use the hotter melting point to flush out the old filament.</string>
 
-    <string name="load_file"> To print a custom file, you will need a 3D design in either .stl or .obj file format. You can download these files
+    <string name="load_file">To print a custom file, you will need a 3D design in either .stl or .obj file format. You can download these files
     from websites such as www.MyMiniFactory.com or design your own using CAD or other 3D design software.\n\nTo load the file into Repetier Host click the
     load button located in the top left. Navigate through your files to find the correct .stl or .obj file and click open to load the file.\n\nMultiple
     files can be loaded onto the build plate at once.</string>
 
-    <string name="slice_file"> For you .stl or .obj file to be ready for 3D printing it needs to be "sliced" first. Slicing converts the design file into individual
+    <string name="slice_file">For your .stl or .obj file to be ready for 3D printing it needs to be "sliced" first. Slicing converts the design file into individual
     layers and each layer has a set of commands to tell the 3D printer what to do.\n\nTo slice a file, first make sure that you have the correct
     settings for the printer you are using. These settings can vary depending on the printer model, quality and printing temperatures.\n\nOnce you
     have checked the slicing settings click the slice button and a progress bar will appear.\n\nWhen the slicing has finished you can either print the
     file on a connected printer or save the newly created gcode file so it can be printing using an SD card or saved for later.\n\nPlease note: If you are
     using a printer without a heated bed use only Slic3r and not CuraEngine.</string>
 
-    <string name="object_controls"> Export: If you have loaded multiple files into the software you can use this button tp export them out as one file.
-    \n\nAdd Object: This has the same function as the load button.\n\nCopy Object(s): If you wish to copy an object without loading it in multiple times you
-    can click this button and select the number of copies.\n\nAuto-Position: This will automatically position the selected object in the centre of the
-    build plate.\n\nCentre Object Centres the selected object relative to the size of the bed.\n\nScale Object: This will increase or decrease the size
+    <string name="object_controls"><b>Export:</b> If you have loaded multiple files into the software you can use this button tp export them out as one file.
+    \n\n<b>Add Object:</b> This has the same function as the load button.\n\n<b>Copy Object(s):</b> If you wish to copy an object without loading it in multiple times you
+    can click this button and select the number of copies.\n\n<b>Auto-Position:</b> This will automatically position the selected object in the centre of the
+    build plate.\n\n<b>Centre Object:</b> Centres the selected object relative to the size of the bed.\n\n<b>Scale Object:</b> This will increase or decrease the size
     in any or the entire xyz axis. To scale uniformly (in all axis) keep the padlock locked and enter a value into the X axis box. To scale non-uniformly
-    unlock the padlock and you will be able to enter individual values for all axis.\n\nRotate Object: A value can be entered into one of the xyz axis
+    unlock the padlock and you will be able to enter individual values for all axis.\n\n<b>Rotate Object:</b> A value can be entered into one of the xyz axis
     to rotate in the chosen axis by that value, from 0-360 degrees.</string>
 
-    <string name="sd_print"> Some of our printers do not have an LCD screen and need to be controlled by a computer through a USB cable. However they
+    <string name="different_filament"><b>ABS:</b> Its strength, flexibility, machinability, and higher temperature resistance make it often a preferred
+    plastic for engineers, and professional applications. The hot plastic smell deters some as does the plastics petroleum based origin. The additional
+    requirement of a heated bed means that some printers are incapable of reliably printing ABS. \n\n<b>PLA:</b> The wide range of available colours and translucencies
+    and glossy feel often attract those who print for display or small household users. Many appreciate the plant based origins and prfer the semi-sweet smell
+    over ABS. When properly cooled, PLA seems to have higher maximum printing speeds, lower layer heights, and sharper printed corners. Combining this with low
+    warping on parts make it a popular plastic for home printers, hobbyists, and schools.</string>
+
+    <string name="sd_print">Some of our printers do not have an LCD screen and need to be controlled by a computer through a USB cable. However they
     still have an SD card slot so can be used without connecting to a computer.\n\nSlice a file with the correct settings for the printer you will
     be printing from.\n\nInstead of clicking print, click "save for SD print" and save the file onto an SD card. When naming the file, "auto0.g" must
     be used otherwise nothing will happen when you turn on the printer.\n\nInsert the SD card into the SD card slot on the printer. Make sure the back
     of the SD card is facing up.\n\nMake sure the printer is not connected to a computer and turn it on. The file should start to print automatically.</string>
 
-    <string name="u_extrusion"> Under extrusion occurs when there is not enough material being extruded out of the nozzle and so incomplete layers
+    <string name="u_extrusion">Under extrusion occurs when there is not enough material being extruded out of the nozzle and so incomplete layers
     appear in the printed object. Sometimes this problem is caused by the filament being used. Check that the filament is not being printed at too
     low or too high temperatures as it may not be able to flow evenly through the nozzle if this is the case. Temperatures for each filament can be seen
     in the recommended temperatures section of tips and tricks.\n\nIf the filament feeder makes a ticking sound then the problem is that the filament
@@ -74,11 +91,11 @@
     Check the spool for any tangles and reload the filament into the extruder, cutting off the end which has been grinding. If the filament is still grinding
     then the problem may be a clogged nozzle. See the fixing a clogged nozzle section of tips and tricks.</string>
 
-    <string name="o_extrusion"> If there is too much filament being extruded then it can cause the print to look messy. Most of the time the
+    <string name="o_extrusion">If there is too much filament being extruded then it can cause the print to look messy. Most of the time the
     extrusion multiplier will need to be lowered. This can be changed in the filament settings of slicer configuration. Start by decreasing the
     multiplier by 0.5 and then continue to decrease until the over extrusion has stopped.</string>
 
-    <string name="stringing"> Stringing occurs when filament oozes out from the nozzle whilst the print head is in transit. This is usually caused by
+    <string name="stringing">Stringing occurs when filament oozes out from the nozzle whilst the print head is in transit. This is usually caused by
     printing at too high temperaturesor not enough filament retraction.\n\nTo lower the temperatures go into the printer setting in Repetier-Host
     and in the printer tab change the default extruder temperature. At first decrease the temperature by 5 degrees and then start a test print to see
     if the stringing has been reduced. Keep changing the temperature until the best results are achieved. Do not go outside the recommended printing
@@ -90,14 +107,14 @@
     can be made is increasing the print head travel speed. Increasing this to a value around 150mm/s will give the flament less time to ooze out from
     the nozzle before it starts printing again</string>
 
-    <string name="bed_adhesion"> If a print is not sticking to the bed at the start of a print then it can cause issues for the rest of the print job.
+    <string name="bed_adhesion">If a print is not sticking to the bed at the start of a print then it can cause issues for the rest of the print job.
     If the printer being used has a heated bed look at the recommended bed temperatures for the filament being used.\n\nThe most common cause of this
     problem is the build plate not being calibrated correctly. Either use the built in calibration function of our range of 3D printers or refer to the bed
     calibration section in tips and tricks. Ideally the nozzle should just be squashing the filament against the build plate rather than dropping filament
     onto it.\n\nIf the filament is being extruded thin and wispy then the problem is with the nozzle which could be clogged. See the fixing a clogged nozzle
     section in tips and tricks to help.</string>
 
-    <string name="warping"> Warping occurs when part of a print, usually an edge or corner, contracts while cooling and shrinks causing the part to lift
+    <string name="warping">Warping occurs when part of a print, usually an edge or corner, contracts while cooling and shrinks causing the part to lift
     up from the build plate. There are many ways to prevent warping.\n\nThe build plate could be causing the part to warp. Check the temperatures
     and calibration of the build plate. The temperatures can be found in the recommended temperatures section of tip and tricks and for calibration see
     the calibration section or use the 3D printers built in calibration function. A thin layer of glue can also be applied to the build plate to help
@@ -107,7 +124,7 @@
     between the build plate and the model causing heat to be distributed equally.A decrease in first layer speed and an increase in first layer thickness
     can also stop filament catching the nozzle and being dragged around.</string>
 
-    <string name="overheating"> Some prints will suffer from overhanging edges not being printed properly. In most cases this can be solved by having a fan
+    <string name="overheating">Some prints will suffer from overhanging edges not being printed properly. In most cases this can be solved by having a fan
     face the printer whilst it is printing. This help to cool down each layer a prevents them from drooping over the previous one. Be careful not to set
     the fan too powerful as this could cause the print to move on the build plate.\n\nIf the fan does not solve the problem then supports may need to
     be printed under the overhangs. Supports can be set in the configuration settings of the slicer and can be changed to cover more or less of the model by

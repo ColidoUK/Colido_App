@@ -9,11 +9,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
-
-/**
- * Created by Joeb on 31/03/2017.
- */
 
 public class MaterialsFragment extends Fragment {
 
@@ -35,7 +30,7 @@ public class MaterialsFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_materials, container, false);
         lv = (ListView) rootView.findViewById(R.id.frag_materials);
 
-        ArrayAdapter adapter = new ArrayAdapter<String>(getActivity(), R.layout.tips_listview, tipsArray);
+        ArrayAdapter adapter = new ArrayAdapter<>(getActivity(), R.layout.tips_listview, tipsArray);
         lv.setAdapter(adapter);
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
