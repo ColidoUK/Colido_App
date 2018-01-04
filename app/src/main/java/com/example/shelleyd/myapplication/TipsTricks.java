@@ -42,7 +42,7 @@ public class TipsTricks extends NavigationDrawer {
         LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View contentView = inflater.inflate(R.layout.activity_tips_tricks, null, false);
         mDrawerLayout.addView(contentView, 0);
-        // Create the adapter that will return a fragment for each of the three
+        // Create the adapter that will return a fragment for each of the four
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 

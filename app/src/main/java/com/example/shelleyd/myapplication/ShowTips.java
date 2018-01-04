@@ -49,6 +49,10 @@ public class ShowTips extends NavigationDrawer {
                 tipTitle.setText(R.string.print_head_removal_title);
                 tipText.setText(R.string.print_head_removal);
                 break;
+            case 13: //nozzle replacement
+                tipTitle.setText(R.string.nozzle_replacement_title);
+                tipText.setText(R.string.nozzle_removal);
+                break;
             case 20:
                 tipTitle.setText(R.string.load_file_title);
                 tipText.setText(R.string.load_file);
@@ -66,7 +70,7 @@ public class ShowTips extends NavigationDrawer {
                 tipText.setText(R.string.different_filament);
                 break;
             case 31:
-                tipTitle.setText(R.string.instering_filament_title);
+                tipTitle.setText(R.string.inserting_filament_title);
                 tipText.setText(R.string.inserting_filament);
                 break;
             case 40:

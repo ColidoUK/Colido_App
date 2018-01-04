@@ -21,7 +21,7 @@ public class MaintenanceFragment extends Fragment{
     }
 
     ListView lv;
-    String[] tipsArray = {"Bed calibration for CoLiDo Compact", "Fixing a clogged nozzle", "Taking apart the print head" };
+    String[] tipsArray = {"Bed calibration for CoLiDo Compact", "Fixing a clogged nozzle", "Replacing the print head", "Replacing the nozzle unit" };
     Integer selection = null;
 
     @Override
@@ -45,6 +45,9 @@ public class MaintenanceFragment extends Fragment{
                         break;
                     case 2: //print head removal
                         selection = 12;
+                        break;
+                    case 3: //nozzle replacement
+                        selection = 13;
                         break;
                 }
                 Intent intent = new Intent (getContext(), ShowTips.class);

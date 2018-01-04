@@ -17,7 +17,7 @@ import android.widget.TextView;
 
 public class Troubleshooting extends NavigationDrawer {
 
-    int[]images={R.drawable.overheating,R.drawable.not_sticking, R.drawable.stringing, R.drawable.under_extrusion, R.drawable.warping};
+    int[]images={0/*R.drawable.overheating,R.drawable.not_sticking, R.drawable.stringing, R.drawable.under_extrusion, R.drawable.warping*/};
     String[]text={"Overheating", "Prints Not Sticking", "Stringing", "Under Extrusion", "Warping"};
     ListView myListView;
     Integer image = null;
@@ -60,7 +60,7 @@ public class Troubleshooting extends NavigationDrawer {
                         break;
                     case 4:
                         image = R.drawable.warping;
-                        description = R.string.o_extrusion;
+                        description = R.string.warping;
                         break;
                 }
 
@@ -88,7 +88,7 @@ public class Troubleshooting extends NavigationDrawer {
 
         @Override
         public int getCount() {
-            return images.length;
+            return text.length;
         }
 
         class ViewHolder {
@@ -117,7 +117,7 @@ public class Troubleshooting extends NavigationDrawer {
             }
             Log.d("Plates", "Count: " + count++);
 
-            myViewHolder.myImage.setImageResource(images[position]);
+            myViewHolder.myImage.setImageResource(images[/*position*/0]);
             myViewHolder.myText.setText(text[position]);
 
             return convertView;

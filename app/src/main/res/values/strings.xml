@@ -14,12 +14,13 @@
     <string name="drawer_close">Close Navigation Drawer</string>
     <string name="bed_calibration_title">Bed calibration for CoLiDo Compact</string>
     <string name="clogged_nozzle_title">Fixing a clogged nozzle</string>
-    <string name="print_head_removal_title">Taking apart the print head</string>
+    <string name="print_head_removal_title">Replacing the print head</string>
+    <string name="nozzle_replacement_title">Replacing the nozzle unit</string>
     <string name="load_file_title">Loading a File</string>
     <string name="slice_file_title">Slicing a File</string>
     <string name="object_controls_title">Using Object Placement Controls</string>
     <string name="filament_types_title">Different Filament Types</string>
-    <string name="instering_filament_title">Inserting Filament</string>
+    <string name="inserting_filament_title">Inserting Filament</string>
     <string name="recommended_temps_title">Recommended Temperatures</string>
     <string name="sd_print_title">Using an SD card without an LCD screen</string>
 
@@ -29,16 +30,22 @@
         5.\tMove the print head over to the back left wing nut and then the front wing nut and repeat steps 3 and 4.</string>
 
     <string name="clogged_nozzle">Heat the extruder up to 240c and push through some filament, this may un-clog the nozzle.\n\nWhile the extruder is at temperature for the filament which you are using, take a length of filament and load it into
-    the extruder.\n\nPush the filament through the extruder so that it starts coming out of the nozzle (it might not if you have a full clog)\n\n
-    Cool the nozzle down to around 100c and keep pushing the filment through until no more will come out of the nozzle.\n\n Once the nozzle has cooled to this
-    temperature try to pull the filament out of the extruder. If the filament doesn not pull out without snapping, heat the extruder up to printing temperature
+    the extruder.\n\nPush the filament through the extruder so that it starts coming out of the nozzle (it might not if you have a full clog)\n\nCool the nozzle down to around 100c and keep pushing the filament through until no more will come out of the nozzle.\n\nOnce the nozzle has cooled to this
+    temperature try to pull the filament out of the extruder. If the filament does not pull out without snapping, heat the extruder up to printing temperature
     and keep pulling the filament until it pops out of the extruder.\n\nYou should see some black bits and dirt on the end of the filament. Cut off the end
     and repeat until the filament is clean.</string>
 
-    <string name="print_head_removal">1.\tUse the supplied allen key to remove the 2 screws at the front of the fan. Be careful when removing them
-    not to loose any of the parts.\n\n2.\tUse the long, thin allen key to unscrew the small black grub screw facing the front of the printer. Try not to remove the
-    grub screw completely to avoid losing it.\n\n3.\tTo remove the whole print head from the carriage unscrew the screws underneath the carriage using the
-    supplied allen key.</string>
+    <string name="print_head_removal">1.\tRemove the cover to the board which the fan, extruder, and nozzle plug in.\n\n2.\tRemove the plugs from the board for the fan, nozzle, and extruder motors. \n\n3.\tTo remove the whole print head from the carriage unscrew the screws underneath the carriage using the
+    supplied allen key.\n\n4.\tPlace the new head where the old one was and use the allen key to screw the print head to the frame.
+    \n\n5.\tPlug all of the wires back in to the board and screw on the cover.\n\n6.\tIt is best to recalibrate the build plate once you have replaced the print head as the
+    nozzle position will most likely have changed.</string>
+
+    <string name="nozzle_removal">1.\tRemove the cover to the board where the nozzle heating wire (double red) and thermistor wire (double white) plug in to and unplug these wires.
+    \n\n2.\tUse the supplied allen key to remove the 2 screws at the front of the fan. Be careful not to lose any of the parts when removing the screws.\n\n3.\tUnscrew the small
+    white plastic piece at the top of the nozzle. You may need some pliers to loosen the piece.\n\n4.\tLoosen the small black grub screw at the front of the metal block using the long thin allen key.
+    Try not to remove the screw as it is easy to lose.\n\n5.\tThe nozzle should push out from the metal block if the screws are lose enough and all the plugs have been removed.
+    \n\n6.\tPlace the new nozzle in the metal block, plug in the wires, and screw everything back in.\n\n7.\tIt is best to recalibrate the build plate once you have replaced a nozzle as the
+    position will probably have changed.</string>
 
     <string name="recommended_temps"><b>PLA nozzle:</b> 190&#8211;210c\t <b>PLA bed:</b> 60&#8211;70c\n\n<b>ABS nozzle:</b>240c\t <b>ABS bed:</b> 110c\n\n<b>PA(Nylon) nozzle:</b> 240&#8211;260c
     \t<b>PA(Nylon) bed:</b> 80&#8211;100c\n\n<b>PC+ nozzle:</b> 240&#8211;260c\t<b>PC+ bed:</b> 110&#8211;120c</string>
@@ -62,7 +69,7 @@
     file on a connected printer or save the newly created gcode file so it can be printing using an SD card or saved for later.\n\nPlease note: If you are
     using a printer without a heated bed use only Slic3r and not CuraEngine.</string>
 
-    <string name="object_controls"><b>Export:</b> If you have loaded multiple files into the software you can use this button tp export them out as one file.
+    <string name="object_controls"><b>Export:</b> If you have loaded multiple files into the software you can use this button to export them out as one file.
     \n\n<b>Add Object:</b> This has the same function as the load button.\n\n<b>Copy Object(s):</b> If you wish to copy an object without loading it in multiple times you
     can click this button and select the number of copies.\n\n<b>Auto-Position:</b> This will automatically position the selected object in the centre of the
     build plate.\n\n<b>Centre Object:</b> Centres the selected object relative to the size of the bed.\n\n<b>Scale Object:</b> This will increase or decrease the size
@@ -72,8 +79,8 @@
 
     <string name="different_filament"><b>ABS:</b> Its strength, flexibility, machinability, and higher temperature resistance make it often a preferred
     plastic for engineers, and professional applications. The hot plastic smell deters some as does the plastics petroleum based origin. The additional
-    requirement of a heated bed means that some printers are incapable of reliably printing ABS. \n\n<b>PLA:</b> The wide range of available colours and translucencies
-    and glossy feel often attract those who print for display or small household users. Many appreciate the plant based origins and prfer the semi-sweet smell
+    requirement of a heated bed means that some printers are incapable of reliably printing ABS. \n\n<b>PLA:</b> The wide range of available colours and translucencents
+    and glossy feel often attract those who print for display or small household users. Many appreciate the plant based origins and prefer the semi-sweet smell
     over ABS. When properly cooled, PLA seems to have higher maximum printing speeds, lower layer heights, and sharper printed corners. Combining this with low
     warping on parts make it a popular plastic for home printers, hobbyists, and schools.</string>
 
@@ -96,7 +103,7 @@
     multiplier by 0.5 and then continue to decrease until the over extrusion has stopped.</string>
 
     <string name="stringing">Stringing occurs when filament oozes out from the nozzle whilst the print head is in transit. This is usually caused by
-    printing at too high temperaturesor not enough filament retraction.\n\nTo lower the temperatures go into the printer setting in Repetier-Host
+    printing at too high temperatures or not enough filament retraction.\n\nTo lower the temperatures go into the printer setting in Repetier-Host
     and in the printer tab change the default extruder temperature. At first decrease the temperature by 5 degrees and then start a test print to see
     if the stringing has been reduced. Keep changing the temperature until the best results are achieved. Do not go outside the recommended printing
     temperature for the filament you are using.\n\n To increase the retraction the slicer settings will need to be changed. This can be done by going into
@@ -104,7 +111,7 @@
     extrusion settings. From here the retraction distance and speed can be increased, amongst other settings. As with the temperature, increase the distance
     and speed by small increments and print a test after each settings change. You should start to see less stringing but beware, if you have too much
     retraction it can cause under extrusion after the retract as the filament will take longer to reach the end of the nozzle.\n\nAnother small change that
-    can be made is increasing the print head travel speed. Increasing this to a value around 150mm/s will give the flament less time to ooze out from
+    can be made is increasing the print head travel speed. Increasing this to a value around 150mm/s will give the filament less time to ooze out from
     the nozzle before it starts printing again</string>
 
     <string name="bed_adhesion">If a print is not sticking to the bed at the start of a print then it can cause issues for the rest of the print job.
