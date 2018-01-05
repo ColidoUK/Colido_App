@@ -68,6 +68,10 @@ public class NavigationDrawer extends AppCompatActivity {
                         intent = new Intent(getApplicationContext(), Troubleshooting.class);
                         startActivity(intent);
                         break;
+                    case 4:
+                        intent = new Intent(getApplicationContext(), ContactUs.class);
+                        startActivity(intent);
+                        break;
                 }
             }
         });

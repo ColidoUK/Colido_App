@@ -144,4 +144,5 @@
     <string name="title_activity_show_tips">ShowTips</string>
     <string name="title_activity_troubleshooting">Troubleshooting</string>
     <string name="title_activity_show_troubleshooting">ShowTroubleshooting</string>
+    <string name="title_activity_contact_us">ContactUs</string>
 </resources>
